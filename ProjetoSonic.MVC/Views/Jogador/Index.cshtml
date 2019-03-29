@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ProjetoSonic.MVC.ViewModels.JogadorViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeJogador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApelidoJogador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlturaJogador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PesoJogador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimneto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PeDominante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Posicaojogador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClubeId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeJogador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApelidoJogador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlturaJogador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PesoJogador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimneto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PeDominante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Posicaojogador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClubeId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JogadorId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JogadorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JogadorId })
+        </td>
+    </tr>
+}
+
+</table>

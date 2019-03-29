@@ -1,0 +1,85 @@
+﻿@model ProjetoSonic.MVC.ViewModels.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/materialize")
+@Styles.Render("~/Content/css")
+@Styles.Render("~/Content/materialize")
+@Styles.Render("~/Content/pagecenter")
+
+
+
+@*<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $("#btnLogin").on('click', function (e) {
+
+            e.preventDefault();
+            var fd = $('#form0').serialize();
+
+            AjaxRequest("../Home/Index", "POST", fd, "#container");
+        });
+
+    });
+</script>*@
+
+<body class="teal darken-4">
+
+    <div id="login-page" class="row">
+        <div class="col s12 z-depth-4 card-panel">
+
+            <div id="container">
+
+                <div class="row">
+                    <div class="input-field col s12 center">
+                        <img src="~/Content/images/escudo.png" alt="" class="responsive-img valign profile-image-login">
+                        <p class="center login-form-text">Olho D'água</p>
+                    </div>
+                </div>
+
+                @using (Ajax.BeginForm(null, null, null, null, new { @class = "login-form" }))
+                {
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-social-person-outline prefix"></i>
+                            @Html.TextBoxFor(model => model.Login, new { @class = "form-control", @placeholder = "Login" })                            
+                        </div>
+                    </div>
+
+                    <div class="row margin">
+                        <div class="input-field col s12">
+                            <i class="mdi-action-lock-outline prefix"></i>
+                            @Html.PasswordFor(model => model.Senha, new { @class = "form-control", @placeholder = "Senha" })
+                           
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button id="btnLogin" class="btn waves-effect waves-light col s12" type="submit">Entrar</button>                            
+                        </div>
+                    </div>
+
+                    <div class="row right">
+                        <div class="input-field col s12">
+                            @Ajax.ActionLink("Esqueceu sua senha?", "ForgotPassword", new AjaxOptions
+                       {
+                           UpdateTargetId = "container",
+                           InsertionMode = InsertionMode.Replace,
+                           HttpMethod = "GET"
+                       })
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

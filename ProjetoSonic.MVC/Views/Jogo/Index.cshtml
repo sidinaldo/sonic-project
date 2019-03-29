@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ProjetoSonic.MVC.ViewModels.JogoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataJogo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraJogo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BairroId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CampoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GolTimeA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GolTimeB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoTimeA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResultadoTimeB)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataJogo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraJogo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BairroId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CampoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GolTimeA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GolTimeB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultadoTimeA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResultadoTimeB)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JogoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JogoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JogoId })
+        </td>
+    </tr>
+}
+
+</table>

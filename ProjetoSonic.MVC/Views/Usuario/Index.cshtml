@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjetoSonic.MVC.ViewModels.UsuarioViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailUsuario)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClubeQueTorce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BairroId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailUsuario)
+        </td>      
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClubeQueTorce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BairroId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioId })
+        </td>
+    </tr>
+}
+
+</table>
